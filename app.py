@@ -26,7 +26,7 @@ def main():
     df.loc[(~df['Issuer'].str.contains('/'))&(df['Issuer'].str.contains('bmo')), 'Issuer'] = 'BMO'
     df.loc[(~df['Issuer'].str.contains('/'))&(df['Issuer'].str.contains('bank of america')), 'Issuer'] = 'Bank of America'
     df['Issuer'] = df['Issuer'].str.upper()
-    fig = px.scatter(data_frame=df, x='Issue Date', y='Mortgage Loan Margin', color='Issuer',size='Mtge Orig Amt', title='Historical SBA Pool',
+    fig = px.scatter(data_frame=df, x='Issue Date', y='Mortgage Loan Margin', color='Issuer',size='Mtge Orig Amt', title='Historical SBA Pool Creation',
                      hover_data={'Mortgage Loan Margin':':.2f', 'Mtge Orig Amt': ':,.2f'})
     return df , fig
 
@@ -36,4 +36,4 @@ st.title('SBA Pool Tracker')
 
 df, fig = main()
 
-st.plotly_chart(fig, theme='None', use_container_width=True)
+st.plotly_chart(fig, theme=None, use_container_width=True)
