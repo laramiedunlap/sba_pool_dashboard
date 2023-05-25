@@ -36,4 +36,4 @@ st.title('SBA Pool Tracker')
 
 df, fig = main()
 
-st.plotly_chart(fig, theme='streamlit', use_container_width=True)
+st.plotly_chart(fig, theme='None', use_container_width=True)
